@@ -43,7 +43,7 @@ Before running the script `download.py`, scroll down to the **configuration sect
   Directory path where you want the output files to be saved.
 Make sure this directory exists or is created before saving.
 
-- **`ids_list` **  (L224)
+- **`ids_list` (L224) **  
  A Python list containing the station IDs (as strings) you wish to download data for.
 
 - **`date_list` (L226) **  
