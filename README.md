@@ -37,10 +37,10 @@ Before running the script, scroll down to the **configuration section** and set 
 
   ```python
   download_name = "C:/Users/your_username/Downloads/download.xls"
-  ```python
+  ```
 
 - **`outdir`**  
-  Directory path where you want the processed and cleaned output files to be saved.
+  Directory path where you want the output files to be saved.
 Make sure this directory exists or is created before saving.
 
 - **`ids_list`**  
