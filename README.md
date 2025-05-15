@@ -41,7 +41,8 @@ Before running the script `download.py`, scroll down to the **configuration sect
 
 - **`outdir` (L220) **  
   Directory path where you want the output files to be saved.
-Make sure this directory exists or is created before saving.
+Make sure this directory exists or is created before saving. +
+Already existing files will not be overwritten!
 
 - **`ids_list` (L224) **  
  A Python list containing the station IDs (as strings) you wish to download data for.
@@ -63,13 +64,18 @@ If everything is working correctly, a **CAPTCHA** will appear after a short dela
   <img src="images/captcha-1.PNG" alt="Date list format example" width="400"/>
 </p>
 
-Do this as many times as needed until the CAPTCHA is cleared, also eventually by refreshing the CAPTCHA and the script proceeds.
+Do this as many times as needed until the CAPTCHA is cleared, also eventually by refreshing the CAPTCHA and by changing between an audio or visual CAPTCHA. Before proceeding with the script, the CAPTCHA must be verified succesfully:
 
 <p align="center">
   <img src="images/captcha-2.PNG" alt="Date list format example" width="400"/>
 </p>
 
-Press ENTER in your Python console and the script will continue!
+Now you need to press ENTER in your Python console and the script will continue!
+
+<p align="center">
+  <img src="images/captcha-3.PNG" alt="Date list format example" width="400"/>
+</p>
+
 In the unfortunate case the website crashes or something went wrong, restart the script.
 
 
