@@ -51,6 +51,6 @@ Make sure this directory exists or is created before saving.
 
   When working with **daily resolution**, the total date range is divided into smaller chunks of approximately **330 days**, which is the **maximum period allowed per request** by the DGA website.
 
-![Station Date Range Example](images/captcha-1.PNG)
+<img src="images/captcha-1.PNG" alt="Date list format example" width="400"/>
 
 
