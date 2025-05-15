@@ -8,7 +8,7 @@ This repository contains the necessary files and instructions to set up an envir
  
 To clone this repository, open your terminal and run the following command:
 
-For Ubuntu os:
+
 ```bash
 git clone git@github.com:SNOWCOP/download-DGA.git
  
@@ -21,7 +21,7 @@ conda activate download-DGA
 spyder
 ```
 
-For Windows os:
+Alternatively, you can create your own Conda environment and install the necessary libraries—such as Selenium and Pandas—using Conda. Add any additional dependencies as needed for your setup.
 
 
 
