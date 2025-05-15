@@ -25,7 +25,7 @@ For Windows os:
 
 
 
-## 🛠 Running the Code
+## 🛠 Seeting up the Code
 Before running the script, scroll down to the **configuration section** and set the following parameters:
 
 - **`parameter`**  
@@ -51,8 +51,26 @@ Make sure this directory exists or is created before saving.
 
   When working with **daily resolution**, the total date range is divided into smaller chunks of approximately **330 days**, which is the **maximum period allowed per request** by the DGA website.
 
+### ▶️ Running the Script
+
+Once you have modified the configuration parameters, you can run the script.
+
+If everything is working correctly, a **CAPTCHA** will appear after a short delay. On **Windows**, this is signaled by a **notification sound**.
+
+> **Note:** You do **not** need to solve the CAPTCHA. Simply **click on the orange icon** to continue the process.
+
 <p align="center">
   <img src="images/captcha-1.PNG" alt="Date list format example" width="400"/>
 </p>
+
+Do this as many times as needed until the CAPTCHA is cleared, also eventually by refreshing the CAPTCHA and the script proceeds.
+
+<p align="center">
+  <img src="images/captcha-2.PNG" alt="Date list format example" width="400"/>
+</p>
+
+Press ENTER in your Python console and the script will continue!
+In the unfortunate case the website crashes or something went wrong, restart the script.
+
 
 
