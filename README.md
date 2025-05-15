@@ -25,4 +25,32 @@ For Windows os:
 
 
 
-## Running the Code
+## 🛠 Running the Code
+Before running the script, scroll down to the **configuration section** and set the following parameters:
+
+- **`parameter`**  
+  The meteorological parameter you want to download (among `"temperature"`, `"snow_height"`, `"SWE"`, `"precipitation"`,`"discharge"` and `"radiation"`).  
+
+- **`download_name`**  
+  Full path to the expected download file name (usually where Chrome saves files by default).  
+  **Example on Windows:**
+
+  ```python
+  download_name = "C:/Users/your_username/Downloads/download.xls"
+  ```python
+
+- **`outdir`**  
+  Directory path where you want the processed and cleaned output files to be saved.
+Make sure this directory exists or is created before saving.
+
+- **`ids_list`**  
+ A Python list containing the station IDs (as strings) you wish to download data for.
+
+- **`date_list`**  
+  This variable is automatically loaded from a text file and contains the list of date ranges used for data downloads.
+
+  When working with **daily resolution**, the total date range is divided into smaller chunks of approximately **330 days**, which is the **maximum period allowed per request** by the DGA website.
+
+
+
+

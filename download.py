@@ -248,10 +248,21 @@ if __name__ == "__main__":
             print("date_start:", date_start_str)
             print("date_end:", date_end_str)
             
+            d1 = dt.strftime(dt.strptime(date_start_str, "%d/%m/%Y"),format="%Y%m%d")
+            d2 = dt.strftime(dt.strptime(date_end_str, "%d/%m/%Y"),format="%Y%m%d")
             
-    
-            select_parameters(station_name, date_start_str, date_end_str, parameter, outdir,
-                                  download_name)
+            # check if the file has already been downloaded
+            filename = outdir + os.sep + ('_').join([station_name, 
+                                                     d1, 
+                                                     d2]) + '.xls'
+            
+            if os.path.exists(filename):
+                print(filename + ' already downloaded!')
+                continue
+        
+        
+            # select_parameters(station_name, date_start_str, date_end_str, parameter, outdir,
+            #                       download_name)
           
 
 
