@@ -73,7 +73,7 @@ Do this as many times as needed until the CAPTCHA is cleared, also eventually by
 Now you need to press ENTER in your Python console and the script will continue!
 
 <p align="center">
-  <img src="images/captcha-3.PNG" alt="Date list format example" width="400"/>
+  <img src="images/captcha-3.png" alt="Date list format example" width="400"/>
 </p>
 
 In the unfortunate case the website crashes or something went wrong, restart the script.
