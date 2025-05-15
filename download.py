@@ -220,7 +220,7 @@ if __name__ == "__main__":
     # list with the ids of the stations to be downloaded
     # ids_list = [ '05401007-9', '05703009-7', '04511004-4', '07301000-4','08372001-8','08374001-9']
     #'04700002-5'
-    ids_list = ['03430003-8']
+    ids_list = ['04523002-3']
     
     date_list = pd.read_csv(os.path.join(os.getcwd(),'date_list.txt'), header=None)[0].to_list()
 
@@ -261,8 +261,8 @@ if __name__ == "__main__":
                 continue
         
         
-            # select_parameters(station_name, date_start_str, date_end_str, parameter, outdir,
-            #                       download_name)
+            select_parameters(station_name, date_start_str, date_end_str, parameter, outdir,
+                                  download_name)
           
 
 
