@@ -16,6 +16,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 from datetime import datetime as dt
 from datetime import timedelta
+import pandas as pd
 
 import os
 import shutil
@@ -62,7 +63,7 @@ def select_parameters(station_name, date_start, date_end, parameter, outdir,
     # station code and period
     myID = station_name.split(' ')[0]
     d1 = dt.strftime(dt.strptime(date_start, "%d/%m/%Y"),format="%Y%m%d")
-    d2 = dt.strftime(dt.strptime(date_start, "%d/%m/%Y"),format="%Y%m%d")
+    d2 = dt.strftime(dt.strptime(date_end, "%d/%m/%Y"),format="%Y%m%d")
     
     # check if the file has already been downloaded
     filename = outdir + os.sep + ('_').join([myID, d1, d2]) + '.xls'
@@ -203,7 +204,7 @@ if __name__ == "__main__":
         
     #--------------------------------------------------------------------
     # select among the available parameters, the one you want to download
-    parameter = "SWE"
+    parameter = "discharge"
 
     # path to the folder where the file is initially downloaded automatically 
     # (default download folder)
@@ -213,40 +214,45 @@ if __name__ == "__main__":
     
     # out directory 
     # outdir = r'X:\MRI_Andes\Dati\Cile\SWE_AOI_notmerged'
-    outdir = r'/mnt/CEPH_PROJECTS/PROSNOW/MRI_Andes/Dati/Cile/SWE_AOI_notmerged'
+    outdir = r'/mnt/CEPH_PROJECTS/PROSNOW/MRI_Andes/Dati/Cile/Q'
 
     
     # list with the ids of the stations to be downloaded
-    ids_list = [ '05401007-9', '05703009-7', '04511004-4', '07301000-4','08372001-8','08374001-9']
+    # ids_list = [ '05401007-9', '05703009-7', '04511004-4', '07301000-4','08372001-8','08374001-9']
     #'04700002-5'
+    ids_list = ['03430003-8']
     
-    # period for the download
+    date_list = pd.read_csv(os.path.join(os.getcwd(),'date_list.txt'), header=None)[0].to_list()
 
-    # Original date_start as string
-    date_start_str = "06/03/2009"
-    
-    #--------------------------------------------------------------------
-    
-    # Convert to datetime object
-    date_start = dt.strptime(date_start_str, "%d/%m/%Y")
-    
-    # Subtract 330 days (ca. max period allowed for the downloading)
-    date_end = date_start + timedelta(days=330)
-    
-    # Convert back to string if needed
-    date_end_str = date_end.strftime("%d/%m/%Y")
-    
-    print("date_start:", date_start_str)
-    print("date_end:", date_end_str)
 
 
     
     
     for station_name in ids_list:
-
-        select_parameters(station_name, date_start_str, date_end_str, parameter, outdir,
-                              download_name)
-      
+        
+        
+        # period for the download
+        for date_start_str in date_list:
+     
+            #--------------------------------------------------------------------
+            
+            # Convert to datetime object
+            date_start = dt.strptime(date_start_str, "%d/%m/%Y")
+            
+            # Subtract 330 days (ca. max period allowed for the downloading)
+            date_end = date_start + timedelta(days=330)
+            
+            # Convert back to string if needed
+            date_end_str = date_end.strftime("%d/%m/%Y")
+            
+            print("date_start:", date_start_str)
+            print("date_end:", date_end_str)
+            
+            
+    
+            select_parameters(station_name, date_start_str, date_end_str, parameter, outdir,
+                                  download_name)
+          
 
 
 
