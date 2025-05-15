@@ -16,7 +16,13 @@ cd download-DGA/
  
 conda env create -f download_dga.yml
  
-conda activate download_cile
+conda activate download-DGA
  
 spyder
 ```
+
+For Windows os:
+
+
+
+## Running the Code
