@@ -203,6 +203,9 @@ def select_parameters(station_name, date_start, date_end, parameter, outdir,
 if __name__ == "__main__":
         
     #--------------------------------------------------------------------
+    # CONFIGURATION SECTION
+    #--------------------------------------------------------------------
+
     # select among the available parameters, the one you want to download
     parameter = "discharge"
 
@@ -224,6 +227,7 @@ if __name__ == "__main__":
     
     date_list = pd.read_csv(os.path.join(os.getcwd(),'date_list.txt'), header=None)[0].to_list()
 
+    #--------------------------------------------------------------------
 
 
     

@@ -26,12 +26,12 @@ Alternatively, you can create your own Conda environment and install the necessa
 
 
 ## 🛠 Seeting up the Code
-Before running the script, scroll down to the **configuration section** and set the following parameters:
+Before running the script `download.py`, scroll down to the **configuration section** and set the following parameters:
 
-- **`parameter`**  
+- **`parameter` (L210) **  
   The meteorological parameter you want to download (among `"temperature"`, `"snow_height"`, `"SWE"`, `"precipitation"`,`"discharge"` and `"radiation"`).  
 
-- **`download_name`**  
+- **`download_name` (L215) **  
   Full path to the expected download file name (usually where Chrome saves files by default).  
   **Example on Windows:**
 
@@ -39,15 +39,15 @@ Before running the script, scroll down to the **configuration section** and set 
   download_name = "C:/Users/your_username/Downloads/download.xls"
   ```
 
-- **`outdir`**  
+- **`outdir` (L220) **  
   Directory path where you want the output files to be saved.
 Make sure this directory exists or is created before saving.
 
-- **`ids_list`**  
+- **`ids_list` (L224) **  
  A Python list containing the station IDs (as strings) you wish to download data for.
 
-- **`date_list`**  
-  This variable is automatically loaded from a text file and contains the list of date ranges used for data downloads.
+- **`date_list` (L226) **  
+  This variable is automatically loaded from a text file (`date_list.txt`) and contains the list of date ranges used for data downloads.
 
   When working with **daily resolution**, the total date range is divided into smaller chunks of approximately **330 days**, which is the **maximum period allowed per request** by the DGA website.
 
